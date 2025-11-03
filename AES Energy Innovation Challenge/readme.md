@@ -22,12 +22,6 @@ This project was developed for the **AES Energy Innovation Challenge**, a global
 - Proposed a **scalable hydrogen refueling concept** adaptable for future EV and industrial infrastructure.  
 - Awarded **Third Place** among over 100 international teams for innovation and technical rigor.
 
-## Tools & Technologies
-- ANSYS Fluent (CFD Analysis)  
-- SolidWorks / Autodesk Inventor (CAD Design)  
-- MATLAB / Python (Data Analysis & Parametric Optimization)  
-- Excel / Looker Studio (Performance Visualization)
-
 ## Team & Role
 Developed as part of the **Mechanical Engineering team from Universidad Técnica Federico Santa María (Chile)**.  
 **Role:** Project Leader and Simulation Engineer  

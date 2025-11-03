@@ -31,9 +31,4 @@ Developed as part of the **Mechanical Engineering team from Universidad Técnica
 ## Impact
 This project highlights the potential of **hydrogen and battery hybrid systems** in accelerating decarbonization efforts. It serves as a foundation for future work on **energy-efficient cooling systems** and **hydrogen infrastructure modeling**.
 
-## Contact
-**Javiera Espinoza Morales**  
-Mechanical Engineer | Energy Systems & Computational Simulation  
-📧 [jpem@bu.edu](mailto:jpem@bu.edu)  
-🔗 [LinkedIn](https://www.linkedin.com/in/jpespinozam/)
 

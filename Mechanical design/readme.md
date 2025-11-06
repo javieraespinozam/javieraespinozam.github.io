@@ -28,5 +28,3 @@ To explore the model interactively:
 - Upload the `.iam` or `.ipt` files to [Autodesk Viewer](https://viewer.autodesk.com/)
 - Or open with CAD-compatible software such as **Fusion 360**, **FreeCAD**, or **Solid Edge Viewer**
 
-## Repository Structure
-

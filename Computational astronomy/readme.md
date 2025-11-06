@@ -1,44 +1,55 @@
-# Computational Astronomy Projects — UTFSM
-
-This repository includes two observational astrophysics reports developed for the course **AST-205 — Computational Astronomy** at *Universidad Técnica Federico Santa María* under the guidance of **Dr. Odette Toloza Castillo (2022)**.  
-Both projects apply practical data-reduction and analysis techniques using professional astronomical software tools.
 
 ---
 
-## 1. Spectral Analysis of Gacrux using IRAF
+## 2. Aperture Photometry Analysis using APT
 
 ### Overview
-This project presents the computational reduction and analysis of the **visible-light spectrum of Gacrux (Gamma Crucis)**, one of the main stars of the **Southern Cross (Crux)** constellation.  
-Data were obtained from the **AstroQuinta Observatory** and processed using **Python (Jupyter Notebook)** and **IRAF**.
+This project applies **aperture photometry** to two celestial objects — a **star** and an **elliptical galaxy** — using the **Aperture Photometry Tool (APT)**.  
+The aim was to measure and validate the apparent magnitudes of both objects and compare them to catalog values from the **SDSS SkyServer** database.  
 
-### Objectives
-- Extract the stellar spectrum of Gacrux and calibrate it using IRAF.  
-- Perform bias, dark, and flat-field corrections.  
-- Generate a wavelength transformation using a **RELCO (Ar-Ne)** calibration lamp.  
-- Identify absorption lines to determine spectral type and temperature.
+This report demonstrates the process of defining apertures, background annuli, and analyzing growth curves, while evaluating measurement precision and noise.
+
+### Objects Analyzed
+- **Star:** SDSS J115906.26-003932.4  
+  - Position: (179.776°, -0.659°)  
+  - Velocity: 191.4 km/s  
+- **Galaxy:** 6dFGS gJ113953.5-033106  
+  - Velocity: 18,930 km/s  
 
 ### Methodology
-- Preprocessing and visualization in **Python 3.7 / Jupyter Notebook**.  
-- CCD noise correction using *MasterBias* and *MasterDark* images.  
-- Spectral extraction with IRAF’s `apall` function and background subtraction.  
-- Wavelength calibration using RELCO emission lines (RMS ≈ 0.26).
+1. Downloaded **FITS** images with the *g-band filter* from the SDSS SkyServer.  
+2. Loaded each object into **APT** and centered apertures using the *Aperture Slice* diagnostic tool.  
+3. Defined aperture and annulus radii ensuring isolation of the source and background.  
+4. Measured fluxes, computed magnitudes, and compared against SkyServer catalog values.  
+5. Analyzed **curve of growth** and **signal-to-noise ratio (S/N)** for both cases.
 
 ### Results
-- **Star:** Gacrux (Gamma Crucis) — Spectral Type **M3.5 III (Red Giant)**  
-- **Estimated Temperature:** < 3700 K  
-- Identified absorption lines of Fe, TiO, and O₂.  
-- Confirmed expected molecular bands for cool red giants.  
-- Demonstrated IRAF’s continued reliability for academic spectroscopy.
+
+#### A. Star (Point Source)
+- **Measured Magnitude:** 17.4416  
+- **SkyServer Magnitude:** 17.4208  
+- **Error:** 0.12%  
+- **Signal-to-Noise Ratio:** ≈ 400  
+- Correct centering confirmed by radial profile (FWHM ≈ 3 px).  
+- Demonstrated high accuracy for isolated, non-saturated stellar objects.
+
+#### B. Galaxy (Extended Object)
+- **Measured Magnitude:** 15.953 (catalog 14.909)  
+- **Error:** ≈ 6–7%  
+- Larger uncertainty due to irregular luminosity distribution and extended shape.  
+- Recommended to use alternative software or larger apertures for extended sources.
+
+### Conclusions
+- **APT** delivers precise photometric results for **point sources** but limited accuracy for **extended objects** like galaxies.  
+- Photometric precision is highly sensitive to aperture size, centering, and background definition.  
+- The project highlights the critical relationship between instrument calibration and measurement accuracy in astronomical photometry.  
+- Future work may include integrating Python-based automation or alternate methods for galaxy photometry.
 
 ### Tools and Software
-- **IRAF**, **Python (Matplotlib, NumPy)**  
-- **AstroQuinta Observatory datasets**
+- **Aperture Photometry Tool (APT)**  
+- **SDSS SkyServer FITS datasets**  
+- **Python** (for S/N and visualization calculations)
 
 ### References
-1. Toloza, O. *Espectros Cruz del Sur*, UTFSM, 2022.  
-2. Lewis et al. *DER SNR Algorithm*, STScI, 2022.  
-3. Barton, M. *Signal-to-Noise Ratio*, Lifewire, 2022.  
-4. Walker, R. *RELCO Calibration Lines*, Ursus Major, 2022.  
-5. STScI. *NICMOS Instrument Overview*, NASA Hubble, 2022.
-
-### File
+1. Barton, M. *Signal-to-Noise Ratio and Its Importance.* Lifewire, 2022.  
+2. Rebull, L. *NITARP Tutorial: APT Overview.* YouTube, 2022.

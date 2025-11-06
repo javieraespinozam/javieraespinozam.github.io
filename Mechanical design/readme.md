@@ -1,3 +1,17 @@
+---
+
+# Academic Engineering and Astronomy Projects — UTFSM
+
+This repository compiles major university projects completed by **Javiera Espinoza Morales** at the **Universidad Técnica Federico Santa María (UTFSM)** between 2022–2023.  
+It includes detailed technical reports and computational analyses across three domains:
+- **Mechanical Design and Renewable Energy Systems**
+- **Astronomical Spectral Analysis using IRAF**
+- **Aperture Photometry using APT**
+
+Each project demonstrates applied engineering design, simulation, and data processing within both mechanical and astronomical contexts.
+
+---
+
 # Gear Box Design — Technical Drawing
 
 ## Overview
@@ -29,21 +43,7 @@ To explore the model interactively:
 - Or open with CAD-compatible software such as **Fusion 360**, **FreeCAD**, or **Solid Edge Viewer**
 
 
----
-
-# Academic Engineering and Astronomy Projects — UTFSM
-
-This repository compiles major university projects completed by **Javiera Espinoza Morales** at the **Universidad Técnica Federico Santa María (UTFSM)** between 2022–2023.  
-It includes detailed technical reports and computational analyses across three domains:
-- **Mechanical Design and Renewable Energy Systems**
-- **Astronomical Spectral Analysis using IRAF**
-- **Aperture Photometry using APT**
-
-Each project demonstrates applied engineering design, simulation, and data processing within both mechanical and astronomical contexts.
-
----
-
-## 1. Mechanical Design — Medium Power Wind Turbine (3 MW)
+## 2. Mechanical Design — Medium Power Wind Turbine (3 MW)
 
 ### Overview
 The **Mechanical Design Final Report (MEC388)** focuses on the conceptual and structural design of a **3 MW wind turbine** intended for deployment in a high-wind zone near **Antofagasta, Chile**.  

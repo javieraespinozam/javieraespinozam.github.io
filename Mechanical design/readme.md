@@ -31,36 +31,57 @@ To explore the model interactively:
 
 ---
 
-## 3. Aperture Photometry Analysis using APT
+# Academic Engineering and Astronomy Projects — UTFSM
+
+This repository compiles major university projects completed by **Javiera Espinoza Morales** at the **Universidad Técnica Federico Santa María (UTFSM)** between 2022–2023.  
+It includes detailed technical reports and computational analyses across three domains:
+- **Mechanical Design and Renewable Energy Systems**
+- **Astronomical Spectral Analysis using IRAF**
+- **Aperture Photometry using APT**
+
+Each project demonstrates applied engineering design, simulation, and data processing within both mechanical and astronomical contexts.
+
+---
+
+## 1. Mechanical Design — Medium Power Wind Turbine (3 MW)
 
 ### Overview
-This project uses the **Aperture Photometry Tool (APT)** to perform quantitative photometric measurements on two celestial objects — a **star** and an **elliptical galaxy** — comparing the measured magnitudes with catalog values from **SDSS SkyServer**.
+The **Mechanical Design Final Report (MEC388)** focuses on the conceptual and structural design of a **3 MW wind turbine** intended for deployment in a high-wind zone near **Antofagasta, Chile**.  
+The project was developed under the supervision of **Mag. Ing. René Valdenegro Oyaneder** and integrates mechanical design, power transmission, lubrication, control systems, and manufacturability.
 
-### Objects
-- **Star:** SDSS J115906.26-003932.4 — Velocity: 191.4 km/s  
-- **Galaxy:** 6dFGS gJ113953.5-033106 — Velocity: 18,930 km/s  
+### Objectives
+- Design a **horizontal-axis wind turbine** with optimal aerodynamic and structural performance.  
+- Evaluate and select between competing design alternatives based on complexity, reliability, cost, and environmental impact.  
+- Dimension key components: **tower, rotor, blades, shaft, nacelle (gondola)**.  
+- Develop lubrication, maintenance, and safety systems ensuring long-term operation.  
+- Deliver CAD-based assemblies and engineering drawings for fabrication.
 
-### Results
-#### Star (Point Source)
-- **Measured Magnitude:** 17.4416  
-- **SkyServer Magnitude:** 17.4208  
-- **Error:** 0.12%  
-- **S/N Ratio:** ≈ 400  
-- FWHM ≈ 3 px confirms precise centering.
+### Key Specifications
+- **Rated Power:** 3 MW  
+- **Tower Height:** 95 m  
+- **Blade Length:** 78 m  
+- **Expected Service Life:** 25 years  
+- **Operating Wind Range:** 4–25 m/s  
+- **CO₂ Reduction:** ≈ 8570 tons/year avoided emissions  
+- **Lubrication System:** SKF Multiline (synthetic PAO oil)  
+- **Generator:** Permanent magnet synchronous, direct-drive  
 
-#### Galaxy (Extended Object)
-- **Measured Magnitude:** 15.953  
-- **Catalog Magnitude:** 14.909  
-- **Error:** ≈ 6–7%  
-- Reduced accuracy due to irregular luminosity and extended geometry.
+### Structural Components
+- **Rotor:** Curved three-blade configuration, fiber glass with resin composite.  
+- **Tower:** Hybrid concrete–steel tubular design (95 m).  
+- **Shaft:** AISI 4340 steel, 5 m long, 1.5 m diameter.  
+- **Nacelle:** Fiberglass housing for generator and control systems.  
+- **Braking and Control:** Hydraulic brake (HAB-4-90RS) and Radio Bridge sensor system for predictive maintenance.
 
-### Conclusions
-- **APT** delivers highly accurate results for point sources but less so for extended galaxies.  
-- Highlights the impact of aperture size and centering on photometric accuracy.  
-- Suggests Python integration for future automated photometric analysis.
+### Calculations and Modeling
+- Aerodynamic power derived from Betz’s limit (η ≈ 0.59).  
+- Realistic efficiency target of 40%, yielding ~3.4 MW average effective power.  
+- 3D modeling and assembly performed in **Autodesk Inventor**.  
+- Detailed **Free Body Diagrams (FBDs)** and centroid/mass calculations for all structural parts.
 
-### Tools
-- **Aperture Photometry Tool (APT)**  
-- **SDSS SkyServer FITS Data**
+### Deliverables
+- Complete **engineering report** with design rationale, diagrams, and safety considerations.  
+- **Drawings and assembly views** for tower, rotor, nacelle, shaft, and blades.  
+- **Maintenance and operations manual** with predictive, preventive, and corrective maintenance planning.
 
 ### File

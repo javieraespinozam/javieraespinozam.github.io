@@ -1,3 +1,62 @@
+# Computational Astronomy Projects — Universidad Técnica Federico Santa María
+
+This repository includes two observational astrophysics reports developed for the course **AST-205 — Computational Astronomy** under the guidance of **Dr. Odette Toloza Castillo (2022)**.  
+Both projects apply practical data reduction and analysis techniques using professional astronomical software tools — **IRAF** and **APT (Aperture Photometry Tool)** — with data obtained from public observatories and databases such as **AstroQuinta** and **SDSS SkyServer**.
+
+---
+
+## 1. Spectral Analysis of Gacrux using IRAF
+
+### Overview
+This project presents the computational reduction and analysis of the **visible-light spectrum of Gacrux (Gamma Crucis)**, one of the main stars of the **Southern Cross (Crux)** constellation.  
+The data were obtained from the **AstroQuinta Observatory** and processed using **Python (Jupyter Notebook)** for image preprocessing and **IRAF** for spectral extraction, normalization, and wavelength calibration.
+
+### Objectives
+- Extract and calibrate the stellar spectrum of Gacrux using IRAF.  
+- Apply **Bias**, **Dark**, and **Flat-field** corrections to CCD images.  
+- Generate a wavelength transformation using a **RELCO (Ar-Ne)** calibration lamp.  
+- Identify absorption lines and estimate the physical properties of the star.
+
+### Methodology
+1. **Image Reduction**  
+   - Used *MasterBias* and *MasterDark* frames to correct CCD noise.  
+   - The *MasterFlat* was discarded after testing due to increased noise.  
+   - Visual inspection and verification were done in Python with `matplotlib`.
+
+2. **Spectral Extraction**  
+   - Employed IRAF’s `apall` function to define apertures and extract the stellar signal.  
+   - Background subtraction was performed to reduce sky noise.
+
+3. **Normalization and Calibration**  
+   - Normalized the *MasterFlat* using a 9th-order Legendre polynomial via IRAF’s `response` function.  
+   - Created a wavelength transformation based on RELCO emission lines.  
+   - Achieved a calibration RMS of 0.26, validating the accuracy of the wavelength fit.
+
+4. **Spectral Analysis**  
+   - Evaluated SNR across multiple pixel ranges (average SNR ≈ 15–30).  
+   - Generated the final ADU–wavelength spectrum revealing characteristic absorption lines.
+
+### Results
+- **Star:** Gacrux (Gamma Crucis)  
+- **Spectral Type:** M3.5 III (Red Giant)  
+- **Estimated Temperature:** below 3700 K  
+- **Detected lines:** Fe, TiO, and O₂ absorption features.  
+- **Conclusion:** The results align with theoretical expectations for red giants and demonstrate IRAF’s effectiveness for academic spectroscopy despite its legacy status.
+
+### Tools and Software
+- **IRAF (Image Reduction and Analysis Facility)**  
+- **Python 3.7 / Jupyter Notebook**  
+- **Matplotlib**, **NumPy**  
+- **AstroQuinta Observatory datasets**
+
+### References
+1. Toloza, O. *Espectros Cruz del Sur.* UTFSM Open Mind, 2022.  
+2. Lewis, J. et al. *DER SNR: A Simple General Spectroscopic Signal-to-Noise Measurement Algorithm.* STScI, 2022.  
+3. Barton, M. *What Is Signal-to-Noise Ratio and Why Does It Matter?* Lifewire, 2022.  
+4. Walker, R. *RELCO Calibration Lines.* Ursus Major, 2022.  
+5. STScI. *NICMOS Instrument Overview.* NASA Hubble, 2022.
+
+### File
 
 ---
 

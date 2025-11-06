@@ -1,39 +1,40 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9fafb;
-  color: #111827;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javiera Espinoza — Engineering Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Javiera Espinoza Morales</h1>
+    <p>Mechanical Engineer | CFD • Energy Systems • Data Optimization</p>
+    <a href="mailto:jpem@bu.edu">jpem@bu.edu</a> · 
+    <a href="https://www.linkedin.com/in/jpespinozam/" target="_blank">LinkedIn</a> · 
+    <a href="https://github.com/javieraespinozam" target="_blank">GitHub</a>
+  </header>
 
-header {
-  text-align: center;
-  padding: 2rem;
-  background: #2563eb;
-  color: white;
-}
+  <section id="projects">
+    <h2>Selected Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3><a href="CFD/">Computational Fluid Dynamics</a></h3>
+        <p>Simulation of turbulent flow and heat transfer using Ansys Fluent and Python.</p>
+      </div>
+      <div class="card">
+        <h3><a href="Computational%20Methods/">Computational Methods</a></h3>
+        <p>Finite Difference and Finite Volume methods for engineering problems.</p>
+      </div>
+      <div class="card">
+        <h3><a href="Mechanical%20Design/">Mechanical Design</a></h3>
+        <p>3D modeling and assembly drawings using Autodesk Inventor.</p>
+      </div>
+      <div class="card">
+        <h3><a href="Computational%20astronomy/">Computational Astronomy</a></h3>
+        <p>Spectral and photometric data analysis using Python and IRAF.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-header nav a {
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-}
-
-section {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-}
-
-article {
-  background: white;
-  margin: 20px 0;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}

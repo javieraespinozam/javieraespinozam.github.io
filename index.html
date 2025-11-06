@@ -1,40 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Javiera Espinoza — Engineering Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <!-- Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0d1117;        /* GitHub dark */
+      --panel:#161b22;
+      --ink:#e6edf3;
+      --muted:#a9b1ba;
+      --brand:#58a6ff;
+      --accent:#7ee787;    /* soft green */
+      --card:#0f1520;      /* slightly different for depth */
+      --border:#2b333b;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:radial-gradient(1200px 600px at 10% -10%, #18202a 0%, transparent 50%), var(--bg);
+      color:var(--ink); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; line-height:1.6;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* NAV */
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(8px); background:rgba(13,17,23,.6); border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 18px}
+    .logo{font-weight:700; letter-spacing:.3px}
+    .nav a.btn{background:var(--panel); padding:8px 14px; border-radius:10px; border:1px solid var(--border)}
+
+    /* HERO */
+    .hero{max-width:1100px; margin:0 auto; padding:72px 18px 36px; display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
+    .hero h1{font-size:clamp(28px, 4vw, 44px); line-height:1.15; margin:.2rem 0 .5rem}
+    .hero p.lead{color:var(--muted); font-size:clamp(14px, 2vw, 18px)}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 24px}
+    .badge{background:linear-gradient(180deg, #1a2330 0%, #0f1621 100%); border:1px solid var(--border); padding:6px 10px; border-radius:999px; font-size:13px}
+
+    .actions{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 14px; border-radius:12px; border:1px solid var(--border); background:var(--panel); color:var(--ink); transition:.2s transform, .2s box-shadow}
+    .btn:hover{transform:translateY(-2px); box-shadow:var(--shadow)}
+    .btn.primary{background:linear-gradient(180deg, #1f3a58 0%, #132237 100%); border-color:#1f3a58}
+
+    .portrait{justify-self:end; width:220px; height:220px; border-radius:20px; background:linear-gradient(180deg,#243041,#151b23); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow); overflow:hidden}
+    .portrait img{width:100%; height:100%; object-fit:cover}
+
+    /* SECTIONS */
+    section{max-width:1100px; margin:0 auto; padding:36px 18px}
+    .section-title{display:flex; align-items:center; gap:10px; margin:6px 0 18px}
+    .section-title h2{margin:0; font-size:24px}
+    .section-title .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 20px var(--accent)}
+
+    /* PROJECTS GRID */
+    .grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:18px}
+    .card{background:linear-gradient(180deg, #121821, #0b0f15); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); display:flex; flex-direction:column; justify-content:space-between; min-height:180px}
+    .card h3{margin:.2rem 0 .4rem; font-size:18px}
+    .card p{color:var(--muted); margin:0 0 12px}
+    .card .meta{display:flex; gap:8px; flex-wrap:wrap}
+    .chip{font-size:12px; padding:5px 8px; border-radius:999px; border:1px solid var(--border); background:#0d1522}
+    .card a{align-self:flex-start}
+
+    /* SKILLS */
+    .skills{display:flex; flex-wrap:wrap; gap:10px}
+    .skill{padding:8px 10px; background:#101722; border:1px solid var(--border); border-radius:10px; color:var(--muted)}
+
+    /* FOOTER */
+    footer{padding:40px 18px; border-top:1px solid var(--border); background:#0b0f14; color:var(--muted)}
+    .footer-inner{max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+
+    /* MOBILE */
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr; text-align:center}
+      .portrait{justify-self:center}
+      .actions{justify-content:center}
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Javiera Espinoza Morales</h1>
-    <p>Mechanical Engineer | CFD • Energy Systems • Data Optimization</p>
-    <a href="mailto:jpem@bu.edu">jpem@bu.edu</a> · 
-    <a href="https://www.linkedin.com/in/jpespinozam/" target="_blank">LinkedIn</a> · 
-    <a href="https://github.com/javieraespinozam" target="_blank">GitHub</a>
-  </header>
-
-  <section id="projects">
-    <h2>Selected Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3><a href="CFD/">Computational Fluid Dynamics</a></h3>
-        <p>Simulation of turbulent flow and heat transfer using Ansys Fluent and Python.</p>
-      </div>
-      <div class="card">
-        <h3><a href="Computational%20Methods/">Computational Methods</a></h3>
-        <p>Finite Difference and Finite Volume methods for engineering problems.</p>
-      </div>
-      <div class="card">
-        <h3><a href="Mechanical%20Design/">Mechanical Design</a></h3>
-        <p>3D modeling and assembly drawings using Autodesk Inventor.</p>
-      </div>
-      <div class="card">
-        <h3><a href="Computational%20astronomy/">Computational Astronomy</a></h3>
-        <p>Spectral and photometric data analysis using Python and IRAF.</p>
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="logo">Javiera Espinoza</div>
+      <div style="display:flex; gap:10px; align-items:center">
+        <a class="btn" href="mailto:jpem@bu.edu">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/jpespinozam/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="https://github.com/javieraespinozam" target="_blank" rel="noreferrer">GitHub</a>
       </div>
     </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <div class="badges">
+        <span class="badge">Mechanical Engineering — Boston University</span>
+        <span class="badge">CFD • Thermodynamics • Optimization</span>
+      </div>
+      <h1>Engineering portfolio focused on <span style="color:var(--brand)">CFD</span>, numerical methods, and data‑driven energy systems.</h1>
+      <p class="lead">Graduate student with industry experience in mining process analytics and sustainable energy systems. Skilled in Ansys Fluent, MATLAB, and Python. Bilingual (English/Spanish).</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn" href="#skills">Skills</a>
+        <a class="btn" href="README.md">Repo README</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <!-- Optional: place an image at /assets/portrait.jpg -->
+      <!-- <img src="assets/portrait.jpg" alt="Javiera portrait" /> -->
+      <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 12c2.761 0 5-2.239 5-5S14.761 2 12 2 7 4.239 7 7s2.239 5 5 5Zm0 2c-3.866 0-7 2.239-7 5v1h14v-1c0-2.761-3.134-5-7-5Z" fill="#7ee787"/></svg>
+    </div>
+  </header>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-title"><span class="dot"></span><h2>Selected Projects</h2></div>
+    <div class="grid">
+      <!-- AES Energy Innovation Challenge -->
+      <div class="card">
+        <div>
+          <h3><a href="AES-Energy-Innovation-Challenge/">AES Energy Innovation Challenge</a></h3>
+          <p>Techno‑economic analysis for clean energy: demand modeling, LCOE sensitivity, deployment strategy.</p>
+          <div class="meta">
+            <span class="chip">Python</span><span class="chip">Energy</span><span class="chip">TEA</span>
+          </div>
+        </div>
+        <a class="btn" href="AES-Energy-Innovation-Challenge/">Open</a>
+      </div>
+
+      <!-- CFD -->
+      <div class="card">
+        <div>
+          <h3><a href="CFD/">Computational Fluid Dynamics</a></h3>
+          <p>Laminar/turbulent flow and heat transfer simulations using Ansys Fluent and Python validations.</p>
+          <div class="meta"><span class="chip">Fluent</span><span class="chip">Python</span><span class="chip">Heat Transfer</span></div>
+        </div>
+        <a class="btn" href="CFD/">Open</a>
+      </div>
+
+      <!-- Computational Methods -->
+      <div class="card">
+        <div>
+          <h3><a href="Computational%20Methods/">Computational Methods</a></h3>
+          <p>Finite Difference (FDM) and Finite Volume (FVM) methods for PDEs; stability and convergence studies.</p>
+          <div class="meta"><span class="chip">FDM</span><span class="chip">FVM</span><span class="chip">MATLAB/Python</span></div>
+        </div>
+        <a class="btn" href="Computational%20Methods/">Open</a>
+      </div>
+
+      <!-- Mechanical Design -->
+      <div class="card">
+        <div>
+          <h3><a href="Mechanical%20Design/">Mechanical Design</a></h3>
+          <p>Gearbox assembly and technical drawings in Autodesk Inventor with BOM and tolerances.</p>
+          <div class="meta"><span class="chip">Inventor</span><span class="chip">CAD</span></div>
+        </div>
+        <a class="btn" href="Mechanical%20Design/">Open</a>
+      </div>
+
+      <!-- Computational Astronomy -->
+      <div class="card">
+        <div>
+          <h3><a href="Computational%20astronomy/">Computational Astronomy</a></h3>
+          <p>Photometry & spectral analysis using Python, IRAF and APT with automated pipelines.</p>
+          <div class="meta"><span class="chip">Python</span><span class="chip">IRAF</span><span class="chip">APT</span></div>
+        </div>
+        <a class="btn" href="Computational%20astronomy/">Open</a>
+      </div>
+
+      <!-- Energy Management -->
+      <div class="card">
+        <div>
+          <h3><a href="Energy%20Management/">Energy Management</a></h3>
+          <p>Efficiency assessment and renewable integration scenarios with data‑driven optimization.</p>
+          <div class="meta"><span class="chip">Energy</span><span class="chip">Optimization</span></div>
+        </div>
+        <a class="btn" href="Energy%20Management/">Open</a>
+      </div>
+
+      <!-- Environmental & Energy Systems Design -->
+      <div class="card">
+        <div>
+          <h3><a href="Environmental%20and%20Energy%20Systems%20Design/">Environmental & Energy Systems Design</a></h3>
+          <p>Multicriteria sustainable system design combining thermodynamic models and LCA metrics.</p>
+          <div class="meta"><span class="chip">Sustainability</span><span class="chip">LCA</span></div>
+        </div>
+        <a class="btn" href="Environmental%20and%20Energy%20Systems%20Design/">Open</a>
+      </div>
+
+    </div>
   </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-title"><span class="dot"></span><h2>Skills</h2></div>
+    <div class="skills">
+      <span class="skill">Ansys Fluent</span>
+      <span class="skill">MATLAB</span>
+      <span class="skill">Python (NumPy/pandas/Matplotlib)</span>
+      <span class="skill">SQL • BigQuery</span>
+      <span class="skill">Autodesk Inventor</span>
+      <span class="skill">Optimization & Sensitivity</span>
+      <span class="skill">CFD • Heat Transfer</span>
+      <span class="skill">English/Spanish</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© 2025 Javiera Espinoza — All rights reserved.</div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn" href="mailto:jpem@bu.edu">jpem@bu.edu</a>
+        <a class="btn" href="https://www.linkedin.com/in/jpespinozam/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="https://github.com/javieraespinozam" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
-

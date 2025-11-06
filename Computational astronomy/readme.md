@@ -56,8 +56,6 @@ The data were obtained from the **AstroQuinta Observatory** and processed using 
 4. Walker, R. *RELCO Calibration Lines.* Ursus Major, 2022.  
 5. STScI. *NICMOS Instrument Overview.* NASA Hubble, 2022.
 
-### File
-
 ---
 
 ## 2. Aperture Photometry Analysis using APT

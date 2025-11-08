@@ -1,154 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Javiera Espinoza — Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <title>Javiera Espinoza Morales — Academic Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'light') document.documentElement.classList.remove('dark');
+  </script>
   <style>
-    :root{
-      --bg:#0b0f14; --panel:#0f1520; --panel-2:#0c1119; --ink:#e8eef5; --muted:#a7b0bb; --brand:#8ab4ff; --accent:#7ee787; --border:#1f2a36;
-      --radius:18px; --shadow:0 10px 32px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;background:
-      radial-gradient(800px 500px at 10% -10%, #152036 0%, transparent 50%),
-      radial-gradient(1000px 600px at 120% 10%, #1a2438 0%, transparent 45%),
-      var(--bg);
-      color:var(--ink); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; line-height:1.6}
-    a{color:var(--brand); text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    /* NAV */
-    .nav{position:sticky; top:0; z-index:50; backdrop-filter: blur(8px) saturate(150%); background:rgba(11,15,20,.55); border-bottom:1px solid var(--border)}
-    .nav-inner{max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 18px}
-    .logo{font-family:'Playfair Display', serif; font-weight:700; letter-spacing:.5px}
-    .nav a.btn{background:linear-gradient(180deg,#121a28,#0b121c); padding:8px 14px; border-radius:12px; border:1px solid var(--border)}
-
-    /* HERO */
-    .hero{max-width:1100px; margin:0 auto; padding:80px 18px 40px; display:grid; grid-template-columns:1.3fr .7fr; gap:28px; align-items:center}
-    .eyebrow{display:inline-block; padding:6px 12px; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:13px; background:#0e1623}
-    h1{font-family:'Playfair Display', serif; font-weight:700; font-size:clamp(34px,4.8vw,56px); line-height:1.1; margin:14px 0}
-    .lead{color:var(--muted); max-width:62ch}
-    .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:14px; border:1px solid var(--border); background:#0f1623; color:var(--ink); transition:.2s transform,.2s box-shadow}
-    .btn:hover{transform:translateY(-2px); box-shadow:var(--shadow)}
-    .btn.primary{background:linear-gradient(180deg,#223d64,#15273f); border-color:#223d64}
-
-    .portrait{justify-self:end; width:240px; height:240px; border-radius:24px; background:linear-gradient(180deg,#1b2435,#111826); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow)}
-    .portrait svg{filter:drop-shadow(0 10px 20px rgba(0,0,0,.35))}
-
-    /* SECTION */
-    section{max-width:1100px; margin:0 auto; padding:40px 18px}
-    .section-title{display:flex; align-items:center; gap:10px; margin:0 0 18px}
-    .section-title h2{margin:0; font-size:22px; font-weight:600}
-    .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 20px var(--accent)}
-
-    /* GRID */
-    .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:18px}
-    .card{position:relative; background:linear-gradient(180deg,#0f1623,#0c1119); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); min-height:200px; overflow:hidden}
-    .card::after{content:""; position:absolute; inset:-2px; border-radius:inherit; background:linear-gradient(120deg, rgba(138,180,255,.15), rgba(126,231,135,.07), transparent 60%); mask:linear-gradient(#000,#000) content-box,linear-gradient(#000,#000); -webkit-mask:linear-gradient(#000,#000) content-box,linear-gradient(#000,#000); padding:1px; pointer-events:none}
-    .card h3{margin:.2rem 0 .4rem; font-size:18px}
-    .card p{color:var(--muted); margin:0 0 12px}
-    .meta{display:flex; gap:8px; flex-wrap:wrap}
-    .chip{font-size:12px; padding:5px 8px; border-radius:999px; border:1px solid var(--border); background:#0b131f}
-    .card a{align-self:flex-start}
-    .empty{opacity:.8}
-
-    /* FOOTER */
-    footer{padding:46px 18px; border-top:1px solid var(--border); color:var(--muted); background:#0a0f15}
-    .footer-inner{max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
-
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr; text-align:left}
-      .portrait{justify-self:start}
-    }
+    :root { color-scheme: dark light; }
   </style>
 </head>
-<body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="logo">Javiera Espinoza</div>
-      <div style="display:flex; gap:10px; align-items:center">
-        <a class="btn" href="mailto:jpem@bu.edu">Email</a>
-        <a class="btn" href="https://www.linkedin.com/in/jpespinozam/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn" href="https://github.com/javieraespinozam" target="_blank" rel="noreferrer">GitHub</a>
+<body class="bg-slate-900 text-slate-100 selection:bg-indigo-500/30">
+  <div class="mx-auto max-w-6xl px-6 py-10">
+    <!-- Header -->
+    <header class="flex flex-col gap-6">
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+        Javiera Espinoza Morales — <span class="text-indigo-400">MSc in Mechanical Engineering</span> · Boston University
+      </h1>
+      <p class="max-w-3xl text-slate-300 leading-relaxed">
+        Master of Science in Mechanical Engineering at <span class="font-semibold">Boston University</span>, with a focus on <span class="font-semibold">design</span> and <span class="font-semibold">energy systems</span>. Previous academic work at UTFSM (2022–2023) includes mechanical design, technical drawing (Autodesk Inventor), and astronomical data analysis (IRAF/APT).
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="resume.pdf" class="rounded-xl bg-indigo-500/10 border border-indigo-400/30 px-4 py-2 hover:bg-indigo-400/20 transition">Resume (PDF)</a>
+        <a href="mailto:jpem@bu.edu" class="rounded-xl bg-slate-800 border border-slate-700 px-4 py-2 hover:bg-slate-700 transition">Email</a>
+        <a href="https://github.com/" target="_blank" class="rounded-xl bg-slate-800 border border-slate-700 px-4 py-2 hover:bg-slate-700 transition">GitHub Repo</a>
+        <button id="toggleTheme" class="rounded-xl bg-slate-800 border border-slate-700 px-4 py-2 hover:bg-slate-700 transition">Toggle theme</button>
       </div>
-    </div>
-  </nav>
-
-  <header class="hero">
-    <div>
-      <span class="eyebrow">Mechanical Engineering · Boston University</span>
-      <h1>Numerical simulation, CFD, and data‑driven energy systems.</h1>
-      <p class="lead">Portfolio of selected academic and industry projects across CFD, finite‑difference/finite‑volume methods, and energy analytics. Bilingual (English/Spanish).</p>
-      <div class="actions">
-        <a class="btn primary" href="#repos">View repositories</a>
-        <a class="btn" href="#contact">Contact</a>
+      <div class="flex flex-wrap gap-6 pt-2">
+        <div class="h-16 w-40 rounded-xl bg-slate-800 border border-slate-700 grid place-items-center text-slate-300">BU</div>
+        <div class="h-16 w-40 rounded-xl bg-slate-800 border border-slate-700 grid place-items-center text-slate-300">UTFSM</div>
+        <div class="h-16 w-40 rounded-xl bg-slate-800 border border-slate-700 grid place-items-center text-slate-300">Engineering</div>
       </div>
-    </div>
-    <div class="portrait">
-      <svg width="128" height="128" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 12c2.761 0 5-2.239 5-5S14.761 2 12 2 7 4.239 7 7s2.239 5 5 5Zm0 2c-3.866 0-7 2.239-7 5v1h14v-1c0-2.761-3.134-5-7-5Z" fill="#7ee787"/></svg>
-    </div>
-  </header>
+    </header>
 
-  <section id="repos">
-    <div class="section-title"><span class="dot"></span><h2>Repositories</h2></div>
-    <div class="grid" id="repo-grid">
-      <div class="card empty"><p>Loading repositories…</p></div>
-    </div>
-  </section>
+    <!-- Focus Areas -->
+    <section class="mt-10">
+      <h2 class="text-2xl font-bold mb-4">Focus Areas</h2>
+      <div id="chips" class="flex flex-wrap gap-3"></div>
+    </section>
 
-  <footer id="contact">
-    <div class="footer-inner">
-      <div>© 2025 Javiera Espinoza — All rights reserved.</div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap">
-        <a class="btn" href="mailto:jpem@bu.edu">jpem@bu.edu</a>
-        <a class="btn" href="https://www.linkedin.com/in/jpespinozam/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn" href="https://github.com/javieraespinozam" target="_blank" rel="noreferrer">GitHub</a>
-      </div>
-    </div>
-  </footer>
+    <!-- Featured Projects -->
+    <section class="mt-10">
+      <h2 class="text-2xl font-bold mb-6">Featured Projects</h2>
+      <div id="projects" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-14 text-sm text-slate-400">
+      © <span id="year"></span> Javiera Espinoza Morales — Hecho con TailwindCSS. 
+      <a class="underline hover:no-underline" href="https://www.linkedin.com/in/jpespinozam/" target="_blank" rel="noopener">LinkedIn</a>
+    </footer>
+  </div>
 
   <script>
-    function fmtDate(iso){ const d = new Date(iso); return d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'}); }
-    function escapeHtml(s){ return (s||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[m])); }
+    const chips = [
+      'Mechanical Design', 'Energy Systems', 'Technical Drawing (Inventor)', 'Renewable Energy Analysis', 'Astronomical Data Analysis', 'Spectral Analysis (IRAF)', 'Aperture Photometry (APT)', 'Python · MATLAB · LaTeX'
+    ];
 
-    async function loadRepos(){
-      const user = 'javieraespinozam';
-      const grid = document.getElementById('repo-grid');
-      try{
-        const res = await fetch(`https://api.github.com/users/${user}/repos?per_page=100&type=owner&sort=updated`);
-        if(!res.ok) throw new Error('GitHub API '+res.status);
-        const repos = await res.json();
-        const filtered = repos
-          .filter(r => !r.fork && !r.archived && r.name !== `${user}.github.io`)
-          .sort((a,b)=> new Date(b.pushed_at) - new Date(a.pushed_at));
-        grid.innerHTML = '';
-        if(!filtered.length){ grid.innerHTML = '<div class="card empty"><p>No public repositories found.</p></div>'; return; }
-        for(const r of filtered){
-          const a = document.createElement('article');
-          a.className = 'card';
-          const homepage = r.homepage && r.homepage.trim() ? r.homepage : r.html_url;
-          a.innerHTML = `
-            <div>
-              <h3><a href="${homepage}" target="_blank" rel="noreferrer">${escapeHtml(r.name)}</a></h3>
-              <p>${escapeHtml(r.description) || 'No description available.'}</p>
-              <div class="meta">
-                <span class="chip">⭐ ${r.stargazers_count}</span>
-                <span class="chip">Updated ${fmtDate(r.updated_at)}</span>
-                ${r.language ? `<span class="chip">${escapeHtml(r.language)}</span>` : ''}
-              </div>
-            </div>
-            <a class="btn" href="${r.html_url}" target="_blank" rel="noreferrer">Repository</a>`;
-          grid.appendChild(a);
-        }
-      }catch(e){
-        console.error(e); grid.innerHTML = '<div class="card empty"><p>Couldn’t load repositories (GitHub API). Try reloading.</p></div>';
+    const projects = [
+      {
+        title: 'Gear Box Design — Technical Drawing',
+        desc: 'Assembly and detail design modeled in Autodesk Inventor. Includes orthographic projections, tolerances, and Bill of Materials for validation.',
+        tags: ['CAD', 'Manufacturing', 'Inventor'],
+        link: '#'
+      },
+      {
+        title: 'Renewable Energy Systems — Sizing & Analysis',
+        desc: 'Performance and efficiency analysis of renewable energy systems with dimensioning and system optimization calculations.',
+        tags: ['Energy', 'Modeling'],
+        link: '#'
+      },
+      {
+        title: 'Astronomical Spectral Analysis (IRAF)',
+        desc: 'Spectral reduction and line identification using IRAF; report includes methodology, figures, and discussion of results.',
+        tags: ['Astronomy', 'IRAF'],
+        link: '#'
+      },
+      {
+        title: 'Aperture Photometry using APT',
+        desc: 'Light curve measurement and magnitude estimation through APT, with error estimation and quality control.',
+        tags: ['Astronomy', 'APT'],
+        link: '#'
+      },
+      {
+        title: 'UTFSM Academic Projects Compilation',
+        desc: 'Collection of major UTFSM academic projects (2022–2023) with reports, codes, and technical documentation.',
+        tags: ['Documentation', 'Portfolio'],
+        link: '#'
       }
+    ];
+
+    const chipWrap = document.getElementById('chips');
+    chips.forEach(txt => {
+      const a = document.createElement('span');
+      a.className = 'inline-flex items-center rounded-full border border-slate-700 bg-slate-800 px-3 py-1 text-sm text-slate-300';
+      a.textContent = txt;
+      chipWrap.appendChild(a);
+    });
+
+    const projWrap = document.getElementById('projects');
+    projects.forEach(({title, desc, tags, link}) => {
+      const card = document.createElement('a');
+      card.href = link;
+      card.target = link && link !== '#' ? '_blank' : '_self';
+      card.className = 'block rounded-2xl border border-slate-700 bg-slate-800 p-5 hover:-translate-y-0.5 hover:shadow-lg hover:border-slate-600 transition';
+      card.innerHTML = `
+        <h3 class="text-lg font-semibold">${title}</h3>
+        <p class="mt-2 text-slate-300">${desc}</p>
+        <div class="mt-4 flex flex-wrap gap-2">${tags.map(t => `<span class='text-xs rounded-full border border-slate-600 bg-slate-900 px-2 py-1'>${t}</span>`).join('')}</div>
+      `;
+      projWrap.appendChild(card);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('toggleTheme').addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      document.body.classList.toggle('bg-white');
+      document.body.classList.toggle('text-slate-900');
+    });
+
+    if (storedTheme === 'light') {
+      document.body.classList.add('bg-white', 'text-slate-900');
     }
-    window.addEventListener('DOMContentLoaded', loadRepos);
   </script>
 </body>
 </html>

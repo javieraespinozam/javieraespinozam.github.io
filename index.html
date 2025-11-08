@@ -42,10 +42,10 @@
 
     <!-- Hero / Header -->
     <header class="relative overflow-hidden rounded-3xl border border-white/5 bg-gradient-to-b from-slate-900/60 to-slate-900/30 p-8 sm:p-12 shadow-soft">
-      <div class="absolute -top-20 -right-16 h-64 w-64 rounded-full bg-brand-500/10 blur-3xl"></div>
-      <div class="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-accent-500/10 blur-3xl"></div>
+      <div class="absolute -top-20 -right-16 h-64 w-64 rounded-full bg-brand-500/10 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-accent-500/10 blur-3xl pointer-events-none"></div>
 
-      <div class="flex flex-col gap-6 relative">
+      <div class="flex flex-col gap-6 relative z-10 isolation-isolate">
         <!-- relocation badge -->
         <div class="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs tracking-wide text-ink-1">
           Open to Opportunities · Willing to relocate anywhere in the U.S. starting May 2026
@@ -64,9 +64,9 @@
         <!-- actions -->
         <div class="flex flex-wrap gap-3">
           <a href="mailto:jpem@bu.edu" class="rounded-xl bg-cta-500/90 hover:bg-cta-600 text-black font-medium px-4 py-2 transition">Contact me</a>
-          <a href="CV_Espinoza.Javiera.pdf" class="rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-2 transition">Resume (PDF)</a>
+          <a id="resumeLink" href="resume.pdf" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-2 transition">Resume (PDF)</a>
           <a href="https://www.linkedin.com/in/jpespinozam/" target="_blank" class="rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-2 transition">LinkedIn</a>
-          <a href="https://github.com/" target="_blank" class="rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-2 transition">GitHub</a>
+          
           <button id="toggleTheme" class="rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-2 transition">Toggle theme</button>
         </div>
 
@@ -122,35 +122,62 @@
     ];
 
     const projects = [
+      // Linked GitHub projects
       {
-        title: 'Hydrogen–Impurity Mixture Thesis',
-        desc: 'Computational study of hydrogen–impurity mixtures under rapid compression. Focus on heat transfer and reactive dynamics; application of CFD and thermodynamic modeling to energy safety and performance.',
-        tags: ['Research', 'CFD', 'Energy Systems']
+        title: 'AES Energy Innovation Challenge',
+        desc: 'Techno‑economic assessment and concept design for clean energy solutions: demand modeling, LCOE sensitivity, and deployment strategy.',
+        tags: ['Energy', 'Design', 'TEA'],
+        link: 'https://github.com/javieraespinozam/javieraespinozam.github.io/tree/5d040b968f515978cdbdca32cb02d43b182893e8/AES%20Energy%20Innovation%20Challenge'
       },
       {
-        title: 'AES Energy Innovation Challenge 2024',
-        desc: 'Team placed 3rd nationally with a battery cooling optimization concept. Led design trade‑offs, thermal reasoning, and communication to judges and stakeholders.',
-        tags: ['Design', 'Energy', 'Leadership']
+        title: 'CFD',
+        desc: 'Simulation of turbulent and laminar flow using Ansys Fluent and Python; heat‑transfer modeling and validation against analytical benchmarks.',
+        tags: ['CFD', 'Fluids'],
+        link: 'https://github.com/javieraespinozam/javieraespinozam.github.io/tree/5d040b968f515978cdbdca32cb02d43b182893e8/CFD'
       },
       {
-        title: 'Bel‑Ray Chile — Applications Engineering',
-        desc: 'Built data workflows for lubricant monitoring on mining equipment, improving reliability KPIs and automation. Cross‑functional collaboration with maintenance and operations.',
-        tags: ['Data Analytics', 'Mining', 'Automation']
+        title: 'Computational Methods',
+        desc: 'Implementation of Finite Difference (FDM) and Finite Volume (FVM) methods for engineering PDEs; stability and convergence analysis in MATLAB/Python.',
+        tags: ['Numerical', 'Modeling'],
+        link: 'https://github.com/javieraespinozam/javieraespinozam.github.io/tree/5d040b968f515978cdbdca32cb02d43b182893e8/Computational%20Methods'
       },
       {
-        title: 'CMPC Maule — Industrial Compliance',
-        desc: 'Prepared technical compliance documentation that uplifted operational standards and safety practices; coordinated with multidisciplinary teams.',
-        tags: ['Documentation', 'Industry', 'Safety']
+        title: 'Mechanical Design',
+        desc: 'Gearbox assembly modeling and technical drawing in Autodesk Inventor, including BOM and tolerance annotations.',
+        tags: ['CAD', 'Inventor'],
+        link: 'https://github.com/javieraespinozam/javieraespinozam.github.io/tree/5d040b968f515978cdbdca32cb02d43b182893e8/Mechanical%20design'
       },
       {
-        title: 'UTFSM Academic Projects',
-        desc: 'Mechanical design practice (e.g., gearbox in Autodesk Inventor) and renewable energy analyses. Emphasis on precision drawings, BOMs, and reproducible reporting.',
-        tags: ['CAD', 'Academic', 'Inventor']
+        title: 'Computational Astronomy',
+        desc: 'Stellar photometry and spectral analysis using Python, IRAF, and APT; pipeline automation for flux calibration and data reduction.',
+        tags: ['Astronomy', 'Data'],
+        link: 'https://github.com/javieraespinozam/javieraespinozam.github.io/tree/5d040b968f515978cdbdca32cb02d43b182893e8/Computational%20astronomy'
       },
       {
-        title: 'Leadership & Teaching',
-        desc: 'President & General Secretary of the Mechanical Engineering Student Council. Teaching/administrative assistant (Inventor, workshops, thermo, math). Mentored peers; organized materials and logistics.',
-        tags: ['Leadership', 'Education', 'Team Management']
+        title: 'Energy Management',
+        desc: 'Analysis of energy systems and sustainability trade‑offs, including efficiency evaluation, optimization, and renewable integration scenarios.',
+        tags: ['Energy', 'Analysis'],
+        link: 'https://github.com/javieraespinozam/javieraespinozam.github.io/tree/5d040b968f515978cdbdca32cb02d43b182893e8/Energy%20Management%20'
+      },
+      {
+        title: 'Environmental & Energy Systems Design',
+        desc: 'Multicriteria design of sustainable systems combining thermodynamic modeling, LCA, and environmental metrics.',
+        tags: ['Design', 'Sustainability'],
+        link: 'https://github.com/javieraespinozam/javieraespinozam.github.io/tree/5d040b968f515978cdbdca32cb02d43b182893e8/Environmental%20and%20Energy%20Systems%20Design'
+      },
+
+      // Static highlight cards (no links)
+      {
+        title: 'Leadership & Teaching (Static)',
+        desc: 'President & General Secretary of the Mechanical Engineering Student Council; teaching/administrative assistant (Inventor, workshop technology, thermodynamics, mathematics). Mentored peers and coordinated materials.',
+        tags: ['Leadership', 'Education'],
+        link: null
+      },
+      {
+        title: 'Bel‑Ray / CMPC — Industry Experience (Static)',
+        desc: 'Applications Engineering: predictive maintenance and lubricant analytics for mining equipment; safety/compliance documentation at CMPC Maule. Cross‑functional collaboration and KPI improvements.',
+        tags: ['Industry', 'Reliability'],
+        link: null
       }
     ];
 
@@ -163,18 +190,44 @@
       chipWrap.appendChild(a);
     });
 
-    // Render project cards (no external links — descriptive only)
+    // Render project cards: link if URL provided, else static card
     const projWrap = document.getElementById('projects');
-    projects.forEach(({title, desc, tags}) => {
-      const card = document.createElement('div');
-      card.className = 'rounded-2xl border border-white/10 bg-bg-2 p-5 hover:-translate-y-0.5 hover:shadow-soft hover:border-brand-400/30 transition';
-      card.innerHTML = `
+    projects.forEach(({title, desc, tags, link}) => {
+      const wrapper = link ? document.createElement('a') : document.createElement('div');
+      if (link) {
+        wrapper.href = link;
+        wrapper.target = '_blank';
+        wrapper.rel = 'noopener noreferrer';
+        wrapper.className = 'block rounded-2xl border border-white/10 bg-bg-2 p-5 hover:-translate-y-0.5 hover:shadow-soft hover:border-brand-400/30 transition';
+      } else {
+        wrapper.className = 'rounded-2xl border border-white/10 bg-bg-2 p-5 opacity-95';
+      }
+      wrapper.innerHTML = `
         <h3 class="text-lg font-semibold text-ink-1">${title}</h3>
         <p class="mt-2 text-ink-1/85 leading-relaxed">${desc}</p>
         <div class="mt-4 flex flex-wrap gap-2">${tags.map(t => `<span class='text-xs rounded-full border border-white/10 bg-white/5 px-2 py-1'>${t}</span>`).join('')}</div>
       `;
-      projWrap.appendChild(card);
+      projWrap.appendChild(wrapper);
     });
+
+    // Try multiple CV file names and disable the button if none exist
+    (async () => {
+      const candidates = [
+        'resume.pdf',
+        'CV_Espinoza.Javiera.pdf',
+        'CV_Espinoza.Javiera.docx'
+      ];
+      const link = document.getElementById('resumeLink');
+      for (const file of candidates) {
+        try {
+          const res = await fetch(file, { method: 'HEAD' });
+          if (res.ok) { link.href = file; return; }
+        } catch {}
+      }
+      link.textContent = 'Resume (upload missing)';
+      link.classList.add('opacity-60','cursor-not-allowed');
+      link.removeAttribute('href');
+    })();
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -193,4 +246,3 @@
   </script>
 </body>
 </html>
-

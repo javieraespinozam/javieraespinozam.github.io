@@ -1,122 +1,170 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Javiera Espinoza Morales — Academic Portfolio</title>
+  <title>Javiera Espinoza Morales — Mechanical Engineering Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
+    // Tailwind on-the-fly config: refined brand palette (trust-oriented blues + teal accent)
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            ink: {
+              1: '#e8eef6', 2: '#bac7d8', 3: '#8ea3bd'
+            },
+            bg: {
+              1: '#0b1220', // page
+              2: '#0f172a', // panels (slate-900-ish)
+              3: '#111827'  // deep separators
+            },
+            brand: {
+              50:'#e6f2ff', 200:'#a8d1ff', 400:'#5aa6ff', 500:'#3b82f6', 600:'#2563eb'
+            },
+            accent: { 400:'#2dd4bf', 500:'#14b8a6' }, // teal (competence/refresh)
+            cta: { 500:'#f59e0b', 600:'#d97706' }     // subtle amber for CTAs
+          },
+          boxShadow: {
+            soft: '0 10px 25px -10px rgb(0 0 0 / 0.35)'
+          }
+        }
+      }
+    }
     const storedTheme = localStorage.getItem('theme');
     if (storedTheme === 'light') document.documentElement.classList.remove('dark');
   </script>
-  <style>
-    :root { color-scheme: dark light; }
-  </style>
+  <style>:root{ color-scheme: dark light; }</style>
 </head>
-<body class="bg-slate-900 text-slate-100 selection:bg-indigo-500/30">
+<body class="bg-bg-1 text-ink-1 selection:bg-brand-500/30">
   <div class="mx-auto max-w-6xl px-6 py-10">
-    <!-- Header -->
-    <header class="flex flex-col gap-6">
-      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
-        Javiera Espinoza Morales — <span class="text-indigo-400">MSc in Mechanical Engineering</span> · Boston University
-      </h1>
-      <p class="max-w-3xl text-slate-300 leading-relaxed">
-        Master of Science in Mechanical Engineering at <span class="font-semibold">Boston University</span>, with a focus on <span class="font-semibold">design</span> and <span class="font-semibold">energy systems</span>. Previous academic work at UTFSM (2022–2023) includes mechanical design, technical drawing (Autodesk Inventor), and astronomical data analysis (IRAF/APT).
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <a href="resume.pdf" class="rounded-xl bg-indigo-500/10 border border-indigo-400/30 px-4 py-2 hover:bg-indigo-400/20 transition">Resume (PDF)</a>
-        <a href="mailto:jpem@bu.edu" class="rounded-xl bg-slate-800 border border-slate-700 px-4 py-2 hover:bg-slate-700 transition">Email</a>
-        <a href="https://github.com/" target="_blank" class="rounded-xl bg-slate-800 border border-slate-700 px-4 py-2 hover:bg-slate-700 transition">GitHub Repo</a>
-        <button id="toggleTheme" class="rounded-xl bg-slate-800 border border-slate-700 px-4 py-2 hover:bg-slate-700 transition">Toggle theme</button>
-      </div>
-      <div class="flex flex-wrap gap-6 pt-2">
-        <div class="h-16 w-40 rounded-xl bg-slate-800 border border-slate-700 grid place-items-center text-slate-300">BU</div>
-        <div class="h-16 w-40 rounded-xl bg-slate-800 border border-slate-700 grid place-items-center text-slate-300">UTFSM</div>
-        <div class="h-16 w-40 rounded-xl bg-slate-800 border border-slate-700 grid place-items-center text-slate-300">Engineering</div>
+
+    <!-- Hero / Header -->
+    <header class="relative overflow-hidden rounded-3xl border border-white/5 bg-gradient-to-b from-slate-900/60 to-slate-900/30 p-8 sm:p-12 shadow-soft">
+      <div class="absolute -top-20 -right-16 h-64 w-64 rounded-full bg-brand-500/10 blur-3xl"></div>
+      <div class="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-accent-500/10 blur-3xl"></div>
+
+      <div class="flex flex-col gap-6 relative">
+        <div class="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs tracking-wide text-ink-1">
+          Open to Opportunities · Boston, MA
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+          Javiera Espinoza Morales — <span class="text-brand-400">MSc in Mechanical Engineering</span> at Boston University
+        </h1>
+        <p class="max-w-3xl text-lg text-ink-1/90 leading-relaxed">
+          Mechanical Engineer with a focus on <span class="font-semibold">Design</span> and <span class="font-semibold">Energy Systems</span>. Experience in data‑driven engineering, computational modeling (CFD/FEA), and industry projects. Proven <span class="font-semibold">leadership</span> in student councils and teaching teams; recognized with scholarships and competition awards.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="mailto:jpem@bu.edu" class="rounded-xl bg-cta-500/90 hover:bg-cta-600 text-black font-medium px-4 py-2 transition">Contact me</a>
+          <a href="resume.pdf" class="rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-2 transition">Resume (PDF)</a>
+          <a href="https://www.linkedin.com/in/jpespinozam/" target="_blank" class="rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-2 transition">LinkedIn</a>
+          <a href="https://github.com/" target="_blank" class="rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-2 transition">GitHub</a>
+          <button id="toggleTheme" class="rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-2 transition">Toggle theme</button>
+        </div>
+        <ul class="mt-2 grid gap-2 text-sm text-ink-1/75 sm:grid-cols-2">
+          <li>• BU Graduate Scholarship; Santander Mobility Scholarship</li>
+          <li>• Leadership: President & General Secretary, Mech. Eng. Council</li>
+          <li>• Tools: Inventor, Ansys Fluent, Python, MATLAB, IDA ICE</li>
+          <li>• Bilingual: Spanish (fluent), English (advanced)</li>
+        </ul>
       </div>
     </header>
 
-    <!-- Focus Areas -->
-    <section class="mt-10">
+    <!-- Focus Areas (trust palette: blue + teal chips) -->
+    <section class="mt-12">
       <h2 class="text-2xl font-bold mb-4">Focus Areas</h2>
       <div id="chips" class="flex flex-wrap gap-3"></div>
     </section>
 
-    <!-- Featured Projects -->
+    <!-- Highlights / Cards -->
     <section class="mt-10">
-      <h2 class="text-2xl font-bold mb-6">Featured Projects</h2>
+      <h2 class="text-2xl font-bold mb-6">Professional & Academic Highlights</h2>
       <div id="projects" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-6"></div>
     </section>
 
+    <!-- CTA banner -->
+    <section class="mt-12">
+      <div class="rounded-2xl border border-white/10 bg-gradient-to-r from-brand-500/15 via-accent-500/10 to-brand-500/15 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <h3 class="text-lg font-semibold">Let’s build efficient, reliable systems.</h3>
+          <p class="text-ink-1/80">Available for internships and part‑time roles in Energy/Design · Boston area · 2026 start.</p>
+        </div>
+        <a href="mailto:jpem@bu.edu" class="rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-medium px-4 py-2 transition">Get in touch</a>
+      </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="mt-14 text-sm text-slate-400">
-      © <span id="year"></span> Javiera Espinoza Morales — Hecho con TailwindCSS. 
-      <a class="underline hover:no-underline" href="https://www.linkedin.com/in/jpespinozam/" target="_blank" rel="noopener">LinkedIn</a>
+    <footer class="mt-14 text-sm text-ink-1/60">
+      © <span id="year"></span> Javiera Espinoza Morales — Crafted with TailwindCSS.
     </footer>
   </div>
 
   <script>
+    // Content
     const chips = [
-      'Mechanical Design', 'Energy Systems', 'Technical Drawing (Inventor)', 'Renewable Energy Analysis', 'Astronomical Data Analysis', 'Spectral Analysis (IRAF)', 'Aperture Photometry (APT)', 'Python · MATLAB · LaTeX'
+      'Mechanical Design', 'Energy Systems', 'Leadership & Teamwork', 'Computational Modeling (CFD/FEA)', 'Renewable Energy', 'Data Analysis', 'Python · MATLAB · Inventor · Ansys', 'Project Management'
     ];
 
     const projects = [
       {
-        title: 'Gear Box Design — Technical Drawing',
-        desc: 'Assembly and detail design modeled in Autodesk Inventor. Includes orthographic projections, tolerances, and Bill of Materials for validation.',
-        tags: ['CAD', 'Manufacturing', 'Inventor'],
-        link: '#'
+        title: 'Hydrogen–Impurity Mixture Thesis',
+        desc: 'Computational study of hydrogen–impurity mixtures under rapid compression. Focus on heat transfer and reactive dynamics; application of CFD and thermodynamic modeling to energy safety and performance.',
+        tags: ['Research', 'CFD', 'Energy Systems']
       },
       {
-        title: 'Renewable Energy Systems — Sizing & Analysis',
-        desc: 'Performance and efficiency analysis of renewable energy systems with dimensioning and system optimization calculations.',
-        tags: ['Energy', 'Modeling'],
-        link: '#'
+        title: 'AES Energy Innovation Challenge 2024',
+        desc: 'Team placed 3rd nationally with a battery cooling optimization concept. Led design trade‑offs, thermal reasoning, and communication to judges and stakeholders.',
+        tags: ['Design', 'Energy', 'Leadership']
       },
       {
-        title: 'Astronomical Spectral Analysis (IRAF)',
-        desc: 'Spectral reduction and line identification using IRAF; report includes methodology, figures, and discussion of results.',
-        tags: ['Astronomy', 'IRAF'],
-        link: '#'
+        title: 'Bel‑Ray Chile — Applications Engineering',
+        desc: 'Built data workflows for lubricant monitoring on mining equipment, improving reliability KPIs and automation. Cross‑functional collaboration with maintenance and operations.',
+        tags: ['Data Analytics', 'Mining', 'Automation']
       },
       {
-        title: 'Aperture Photometry using APT',
-        desc: 'Light curve measurement and magnitude estimation through APT, with error estimation and quality control.',
-        tags: ['Astronomy', 'APT'],
-        link: '#'
+        title: 'CMPC Maule — Industrial Compliance',
+        desc: 'Prepared technical compliance documentation that uplifted operational standards and safety practices; coordinated with multidisciplinary teams.',
+        tags: ['Documentation', 'Industry', 'Safety']
       },
       {
-        title: 'UTFSM Academic Projects Compilation',
-        desc: 'Collection of major UTFSM academic projects (2022–2023) with reports, codes, and technical documentation.',
-        tags: ['Documentation', 'Portfolio'],
-        link: '#'
+        title: 'UTFSM Academic Projects',
+        desc: 'Mechanical design practice (e.g., gearbox in Autodesk Inventor) and renewable energy analyses. Emphasis on precision drawings, BOMs, and reproducible reporting.',
+        tags: ['CAD', 'Academic', 'Inventor']
+      },
+      {
+        title: 'Leadership & Teaching',
+        desc: 'President & General Secretary of the Mechanical Engineering Student Council. Teaching/administrative assistant (Inventor, workshops, thermo, math). Mentored peers; organized materials and logistics.',
+        tags: ['Leadership', 'Education', 'Team Management']
       }
     ];
 
+    // Render chips
     const chipWrap = document.getElementById('chips');
     chips.forEach(txt => {
       const a = document.createElement('span');
-      a.className = 'inline-flex items-center rounded-full border border-slate-700 bg-slate-800 px-3 py-1 text-sm text-slate-300';
+      a.className = 'inline-flex items-center rounded-full border border-brand-400/20 bg-brand-400/10 px-3 py-1 text-sm text-ink-1 hover:bg-brand-400/15 transition';
       a.textContent = txt;
       chipWrap.appendChild(a);
     });
 
+    // Render project cards (no external links — descriptive only)
     const projWrap = document.getElementById('projects');
-    projects.forEach(({title, desc, tags, link}) => {
-      const card = document.createElement('a');
-      card.href = link;
-      card.target = link && link !== '#' ? '_blank' : '_self';
-      card.className = 'block rounded-2xl border border-slate-700 bg-slate-800 p-5 hover:-translate-y-0.5 hover:shadow-lg hover:border-slate-600 transition';
+    projects.forEach(({title, desc, tags}) => {
+      const card = document.createElement('div');
+      card.className = 'rounded-2xl border border-white/10 bg-bg-2 p-5 hover:-translate-y-0.5 hover:shadow-soft hover:border-brand-400/30 transition';
       card.innerHTML = `
-        <h3 class="text-lg font-semibold">${title}</h3>
-        <p class="mt-2 text-slate-300">${desc}</p>
-        <div class="mt-4 flex flex-wrap gap-2">${tags.map(t => `<span class='text-xs rounded-full border border-slate-600 bg-slate-900 px-2 py-1'>${t}</span>`).join('')}</div>
+        <h3 class="text-lg font-semibold text-ink-1">${title}</h3>
+        <p class="mt-2 text-ink-1/85 leading-relaxed">${desc}</p>
+        <div class="mt-4 flex flex-wrap gap-2">${tags.map(t => `<span class='text-xs rounded-full border border-white/10 bg-white/5 px-2 py-1'>${t}</span>`).join('')}</div>
       `;
       projWrap.appendChild(card);
     });
 
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Theme toggle
     document.getElementById('toggleTheme').addEventListener('click', () => {
       const isDark = document.documentElement.classList.toggle('dark');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
@@ -130,4 +178,3 @@
   </script>
 </body>
 </html>
-
